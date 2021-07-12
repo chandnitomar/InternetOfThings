@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Smart Water Tank</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./main.css">
+	</head>
+	<body>
+		<div class="container">			
+			<h1 class="m-5">Smart Water Tank</h1>	
+			<div class="box_1" id="chart-container" align="center">
+				WaterTank will load here!
+			</div>
+			<p class="artical-content mt-5" >This project is preprared by <strong>Chandni Tomar (18BCE246)</strong> and <strong>Gunjan Vinzuda (18BCE257)</strong> as a part of Innovative Assignment for <em>Internet of Things</em> subject.<br>
+			In this project, we are simulating the idea of a smart water tank. Using this idea we can check the water level of our house water tank, anytime, anywhere!!<br>
+			In this project, the remote sensor data is uploaded to the cloud. Here we are using ThingSpeak as cloud storage. The data is uploaded using ESP32. The value is fetched by web page and according to the value, the simulation of the water tank changes the water level. Also when the water level of the tank is below from certain value it will notify you with an email.<br>
+			The ultrasonic distance sensor is placed on the tank, and it is connected to ESP32. The sensor takes the reading in the time interval of 1 second and ESP32 uploads the value on ThingSpeak cloud. For the simulation, JavaScript is used to take the last reading from the cloud and update the water level in the simulation.</p>	<br>
+			<h3>Circuit Diagram</h3>
+			<p>
+				The pin diagram of the circuit is illustrated as below. <br>
+			</p>		
+			<img src="circuit digram.jpg">
+			<p>
+				As it is shown in the diagram the trigger and echo are connected to pins 2 and 5 of ESP32 respectively. The VCC pin of the sensor is connected to the 3V3 pin of ESP32. The LEDs are connected to pins 25, 26 and 27 of ESP32. <br> When the water level is between 66% to 100% all the LEDs will be on. When the water level is between 33% to 66% the LEDs connected to pins 26 and 27 will be turned on. When the water level is below 33% only the LED connected to pin 27 will be on. When the water level is 0, i.e. tank is empty all the LEDs will be off. Also when the water level is below 33% the notification is will be sent through email.
+			</p>
+		</div>
+	<script type="text/javascript" src="water_tank.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
